@@ -3,7 +3,7 @@ import { isMobile } from "../../support/utils";
 
 const apiGraphQL = `${Cypress.env("apiUrl")}/graphql`;
 
-describe("User Sign-up and Login", function () {
+describe("Alta de usuario y logueo", function () {
   beforeEach(function () {
     cy.task("db:seed");
 
@@ -17,7 +17,7 @@ describe("User Sign-up and Login", function () {
     });
   });
 
-  it("should redirect unauthenticated user to signin page", function () {
+  it.only("Debería redireccionar al usuario no autenticado a la pagina de inicio de sesion", function () {
     cy.visit("/personal");
     cy.location("pathname").should("equal", "/signin");
     cy.visualSnapshot("Redirect to SignIn");
